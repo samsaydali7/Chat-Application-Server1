@@ -85,8 +85,8 @@ function loginLocal(req, res) {
                 yearOfBirth: users[username].yearOfBirth,
                 profileImage: usersProfileImage[username],
                 contactsRequests: contactsRequests,
-                pin:users[username].pin,
-                privacy:users[username].privacy,
+                pin: users[username].pin,
+                privacy: users[username].privacy,
                 message: "Logged In!",
                 contacts: contacts,
                 blockedContacts: blockedContacts,
@@ -116,8 +116,19 @@ function searchLocal(req, res) {
     var users = replications.getUsers();
     var usersProfileImage = replications.getUsersProfileImages();
 
-    var pattern = "^" + req.body.username;
-    var user = req.body.user;
+
+    var pattern;
+    var user;
+
+    if (req.body.username) {
+        pattern = "^" + req.body.username;
+        user = req.body.user;
+    }
+    else {
+        pattern = "^" + req.query.username;
+        user = req.query.user;
+    }
+
     pattern = new RegExp(pattern, 'i');
     var keys = Object.keys(users);
     keys = takeOfContactsFromResault(keys, user);
@@ -191,9 +202,6 @@ module.exports = (app) => {
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: false }));
 
-    app.get('/', (req, res) => {
-        res.end("Connected !")
-    });
     app.post('/login', (req, res) => {
         loginLocal(req, res);
     });
@@ -205,6 +213,10 @@ module.exports = (app) => {
     });
     app.post('/search', (req, res) => {
         search1(req, res);
+    });
+
+    app.get('*', function (req, res) {
+        res.redirect('/');
     });
 }
 

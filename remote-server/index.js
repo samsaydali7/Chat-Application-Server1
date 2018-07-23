@@ -5,10 +5,10 @@ const EventEmmiter = require('events').EventEmitter;
 var listner = new EventEmmiter();
 
 var servers = [
-    /*{
+    {
       host: "192.168.1.254",
       port: 8081
-    }*/
+    }
 ];
 
 

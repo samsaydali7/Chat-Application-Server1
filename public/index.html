@@ -1,71 +1,29 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
-    <!--script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script-->
-    <script src="/socket.io.js"></script>
-    <link rel="stylesheet" type="text/css" href="/style.css">
+  <meta charset="utf-8">
+  <title>Messaging</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./assets/css/font-awesome.css">
+  <link rel="stylesheet" href="./assets/css/w3.css">
+  <link rel="stylesheet" href="./assets/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">
+  <link rel="stylesheet" href="./assets/css/bootstrap.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+  <link rel="stylesheet" href="./assets/css/font-awesome.min.css">
+  <script src="./assets/js/jquery-3.1.1.js"></script>
+  <script src="./assets/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+    crossorigin="anonymous"></script>
+  <script src="./assets/js/bootstrap.js"></script>
+
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 
-<body>
-    <div class="mario-chat">
-        <input id="sender" type="text" placeholder="Sender" />
-        <button id="login">Log</button>
-    </div>
-    <div class="mario-chat">
-        <h2>Mario Chat</h2>
-        <div id="chat-window">
-            <div id="output"></div>
-
-        </div>
-        <input id="message" type="text" placeholder="Message" />
-        <input id="reciver" type="text" placeholder="Reciver" />
-        <button id="send">Send</button>
-    </div>
-    <div class="mario-chat">
-        <h2>Send Image</h2>
-        <input id="inputFileToLoad" type="file" onchange="encodeImageFileAsURL();" />
-        <input id="imageReciver" type="text" placeholder="Reciver" />
-        <button id="sendImage">send</button>
-        <div id="imgTest"></div>
-    </div>
-    <div class="mario-chat">
-        <h2>Notes</h2>
-        <div id="feedback"></div>
-    </div>
-    <div class="mario-chat">
-        <h2>Add Contact</h2>
-        <input id="addedUser" type="text" placeholder="username" />
-        <button id="add">Add</button>
-    </div>
-    <div class="mario-chat">
-        <h2>Accept Contact</h2>
-        <input id="acceptedContact" type="text" placeholder="username" />
-        <button id="accept">Accept</button>
-    </div>
-    <div class="mario-chat">
-        <h2>Delete Contact</h2>
-        <input id="deletedContact" type="text" placeholder="username" />
-        <button id="deleteB">Delete</button>
-    </div>
-    <div class="mario-chat">
-        <h2>Block Contact</h2>
-        <input id="blockedUser" type="text" placeholder="username" />
-        <button id="block">Block!</button>
-    </div>
-    <div class="mario-chat">
-        <h2>Unblock Contact</h2>
-        <input id="unblockedContact" type="text" placeholder="username" />
-        <button id="unblock">Unblock!</button>
-    </div>
-    <div class="mario-chat">
-        <h2>Profile Image</h2>
-        <input id="profileImage" type="file" onchange="profileImageUpload();" />
-        <button id="upload">Upload</button>
-        <div id="imgTestProfile"></div>
-    </div>
-
-    <script src="/script.js"></script>
-</body>
+<body class="w3-theme">
+  <app-root></app-root>
+<script type="text/javascript" src="inline.bundle.js"></script><script type="text/javascript" src="polyfills.bundle.js"></script><script type="text/javascript" src="styles.bundle.js"></script><script type="text/javascript" src="vendor.bundle.js"></script><script type="text/javascript" src="main.bundle.js"></script></body>
 
 </html>

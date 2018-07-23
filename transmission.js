@@ -77,10 +77,14 @@ function sendTyping(data, sockets) {
     */
 }
 function handleOtherServerData(data) {
-    delete data.type;
-    data.type = data.mType;
-    delete data.mType;
-    return data;
+    if(data.type == otherServers.types.MESSAGE || data.type == otherServers.types.READ_NOTE){
+        delete data.type;
+        data.type = data.mType;
+        delete data.mType;
+        return data;
+    }else 
+        return false;
+
 }
 
 module.exports = (socket, sockets) => {
@@ -93,7 +97,9 @@ module.exports = (socket, sockets) => {
 
     remoteListner.on('chat', (data) => {
         data = handleOtherServerData(data);
-        sendMessage(data, sockets);
+        if(data){
+            sendMessage(data, sockets);
+        }
     });
     remoteListner.on('read', (data) => {
         data = handleOtherServerData(data);
