@@ -2,7 +2,7 @@ const WebSocket = require('ws');
 
 const FH = require('../filesHandling');
 
-
+// other servers should use this server's ip and this port to connect in remote-server module.
 var port = 8080;
 const wss = new WebSocket.Server({ port: port }, () => {
     console.log("Listening for servers on port " + port);

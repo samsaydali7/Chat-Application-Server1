@@ -4,11 +4,13 @@ const EventEmmiter = require('events').EventEmitter;
 
 var listner = new EventEmmiter();
 
+// Other Servers You wish to connect with
 var servers = [
-    {
+    //Example
+    /*{
       host: "192.168.1.254",
       port: 8081
-    }
+    }*/
 ];
 
 
